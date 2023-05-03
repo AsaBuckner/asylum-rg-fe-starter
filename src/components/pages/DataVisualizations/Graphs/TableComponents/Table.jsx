@@ -51,9 +51,9 @@ function Table(props) {
         {rows.map((row, idx) => {
           return (
             <TableRow
-              key={idx}
+              key={idx + 888996}
               row={row}
-              rowId={idx}
+              rowId={idx + 996467}
               tableWidth={tableWidth}
               rowHeight={rowHeight}
               columns={columns}

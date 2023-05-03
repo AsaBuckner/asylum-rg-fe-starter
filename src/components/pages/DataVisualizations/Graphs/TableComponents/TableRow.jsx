@@ -23,7 +23,7 @@ function TableRow(props) {
               <SubTable
                 dataObject={row[property]}
                 rowHeight={rowHeight} // so for the SubTablesTable the row should be an object of objects
-                key={idx}
+                key={idx + 8902938}
               />
             );
           } else {
