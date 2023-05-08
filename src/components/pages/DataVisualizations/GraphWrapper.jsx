@@ -10,7 +10,6 @@ import YearLimitsSelect from './YearLimitsSelect';
 import ViewSelect from './ViewSelect';
 import axios from 'axios';
 import { resetVisualizationQuery } from '../../../state/actionCreators';
-import test_data from '../../../data/test_data.json';
 import { colors } from '../../../styles/data_vis_colors';
 import ScrollToTopOnMount from '../../../utils/scrollToTopOnMount';
 
@@ -123,7 +122,7 @@ function GraphWrapper(props) {
       //   case 'citizenship':
       //     await axios.get("https://hrf-asylum-be-b.herokuapp.com/cases/citizenshipSummary")
       //     .then(res => {
-      //       data.citizenshipResults = res.data;
+      //       data[0].citizenshipResults = res.data;
       //       console.log(data[0]);
       //       stateSettingCallback(view, office, res.data);
       //     })
@@ -146,26 +145,6 @@ function GraphWrapper(props) {
             .then(res => {
               data[0] = res.data;
               stateSettingCallback(view, office, data);
-            })
-            .catch(err => {
-              console.log(err);
-            });
-        case 'citizenship':
-          await axios
-            .get(
-              'https://hrf-asylum-be-b.herokuapp.com/cases/citizenshipSummary',
-              {
-                params: {
-                  from: years[0],
-                  to: years[1],
-                  office: office,
-                },
-              }
-            )
-            .then(res => {
-              data[0] = res.data;
-              console.log(data[0]);
-              stateSettingCallback(view, office, data[0]);
             })
             .catch(err => {
               console.log(err);

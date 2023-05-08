@@ -13,6 +13,7 @@ import { LandingPage } from './components/pages/Landing';
 
 import { FooterContent, SubFooter } from './components/Layout/Footer';
 import { HeaderContent } from './components/Layout/Header';
+import Profile from './components/common/Profile';
 
 // import { TablePage } from './components/pages/Table';
 
@@ -22,15 +23,26 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import reducer from './state/reducers';
 import { colors } from './styles/data_vis_colors';
+import { useAuth0, Auth0Provider } from '@auth0/auth0-react';
 
 const { primary_accent_color } = colors;
 
+const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+
 const store = configureStore({ reducer: reducer });
+
 ReactDOM.render(
   <Router>
     <Provider store={store}>
       <React.StrictMode>
-        <App />
+        <Auth0Provider
+          domain={domain}
+          clientId={clientId}
+          redirectUri={window.location.origin}
+        >
+          <App />
+        </Auth0Provider>
       </React.StrictMode>
     </Provider>
   </Router>,
@@ -38,6 +50,7 @@ ReactDOM.render(
 );
 
 export function App() {
+  /////
   const { Footer, Header } = Layout;
   return (
     <Layout>
@@ -54,6 +67,7 @@ export function App() {
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/graphs" component={GraphsContainer} />
+        <Route pat="/profile" component={Profile} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer
