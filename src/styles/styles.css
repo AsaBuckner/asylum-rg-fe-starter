@@ -94,3 +94,49 @@ p {
     color: var(--primary-color-champagne)
 }
 */
+
+.profileBase {
+    background-color: #404C4A;
+    display: flex;
+    justify-content: center;
+}
+
+.profileBackground {
+    background-color: whitesmoke;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.login-logout-profile {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    color: #E2F0F7;
+    padding-right: '75px';
+    border: none;
+    background-color: #404C4A;
+}
+
+img {
+    max-width:100%;
+    max-height:100%;
+}
+
+.Info h1 {
+    font-size: 35px;
+}
+
+.Info h2 {
+    font-size: 30px;
+}
+
+.Info h3 {
+    font-size: 20px;
+}
+
+
+
+
+
+
